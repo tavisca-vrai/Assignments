@@ -1,0 +1,11 @@
+SELECT (Test.dbo.Employees.Salary),DATEPART ( QUARTER , [Test].[dbo].[Employees].[JoiningDate] ) as quarter,DATEPART ( YEAR , [Test].[dbo].[Employees].[JoiningDate] ) as year,DATEPART ( MONTH , [Test].[dbo].[Employees].[JoiningDate] ) as month
+  FROM [Test].[dbo].[Employees],[Test].[dbo].[Orders]
+  group by DATEPART ( MONTH , [Test].[dbo].[Employees].[JoiningDate] ),DATEPART ( QUARTER , [Test].[dbo].[Employees].[JoiningDate] ),DATEPART ( YEAR , [Test].[dbo].[Employees].[JoiningDate] ),[Test].[dbo].[Employees].[salary]
+  order by DATEPART ( YEAR , [Test].[dbo].[Employees].[JoiningDate] ) asc, quarter asc;
+
+SELECT DATEPART( QUARTER , [Test].[dbo].[Orders].[OrderDate] )as quarter,DATEPART ( YEAR , [Test].[dbo].[Orders].[OrderDate] ) as annual
+      ,Count(OrderAmount)as NoOfOrders
+  FROM [Test].[dbo].[Orders]
+  group by DATEPART ( QUARTER , [Test].[dbo].[Orders].[OrderDate] ),DATEPART ( YEAR , [Test].[dbo].[Orders].[OrderDate] ),[EmployeeId]
+      
+  order by DATEPART ( YEAR , [Test].[dbo].[Orders].[OrderDate] ) asc, quarter asc;
