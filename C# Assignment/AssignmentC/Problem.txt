@@ -1,0 +1,19 @@
+﻿Acmetravel.com is an online travel agency selling air tickets online. Market research shows that most customers never look beyond the first page of search results when
+making a booking decision. To leverage this learning, they want to ensure that the more relevant and high yield recommendations are given priority on the first page.
+
+1. Specially marked up itineraries should be given a preference over non marked up itineraries with the same price.
+2. In anticipation of holiday traffic, they have negotiated some special rates from American as well as Delta Airlines. To ensure that sale for these rates
+are maximized, they want to show these rates on top. These rates are available for travel in December for round trip tickets with a duration of 5 or more days.
+3. They also have a exclusivity agreement with SouthWest Airlines for all outbound travel for Dallas. So SouthWest airlines should always be shown on top
+for all searches outbound from Dallas. Also all matching non southwest itineraries should be filtered out. Itineraries are said to be similar if they have the 
+same class of service and the same number of stops.
+4. Due to certain ticketing restrictions with Spirit Airways, they need to ensure that Spirit Airways itineraries are only shown when travel is atleast 3 days after 
+booking.
+5. As part of their impressions campaign, the airline of the month is always shown in top for the first 50000 searches if no other contractual business rules are violated in the process.
+6. After all business rules are applied, results should be sorted by price and number of stops.
+
+You are required to implement the SearchEngine.Process() method which - 
+
+1. Would get a list of itineraries 
+2. Needs to return a filtered and sorted list of itineraries which follow the given business rules.
+
